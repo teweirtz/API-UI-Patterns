@@ -7,7 +7,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            films: [{}],
         };
     }
     componentDidMount() {
@@ -17,24 +17,19 @@ class App extends Component {
             return res.json();
         })
         .then((res) => {
-            this.setState({films: res});
-            console.log(this.state.films);
+            this.setState({films: res.results});
+            // console.log(this.state.films);
         });
     }
     showFilm = () => {
-        console.log(this.state.idSelected);
-        return (this.state.idSelected
-          ? this.state.films.map(film => {
-              if (film.id === this.state.idSelected) {            
-                this.setState({film: film})
-              }
-          })
-          : "");
+        var films = this.state.films
+       var foundFilm =  films.find(film => film.title === this.state.idSelected)        
+          return this.setState({film: foundFilm})
       };
     handleClick = (e) => {
-        console.log(e.target.id);
+        // console.log(e.target.innerText);
         this.setState({ 
-            idSelected: e.target.id }, () => {
+            idSelected: e.target.innerText }, () => {
           this.showFilm();
         });
       };
