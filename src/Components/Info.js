@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import "./Info.css";
+import React, {Component, useState} from 'react';
+import "./Info.css"; 
 
 class Info extends Component{
     render() {
         const {film} = this.props;
         return (
-            <div className="body">
             <div className="wrapper">
-                <p className="summary">{film.opening_crawl}</p>
-            </div>
+                    <p className="summary">{film.opening_crawl}</p>
             </div>
         );
     }

@@ -1,11 +1,16 @@
 @import url('ttps://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
 
-.body {
+.wrapper{
     overflow: hidden;
     margin: 50% 0 0 0;
     position: relative;
+    display: flex;
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    perspective: 450px;
 }
-.body::after{
+.wrapper:after{
     content: '';
     position: fixed;
     top: 0;
@@ -13,21 +18,9 @@
     height: 50%;
     background: linear-gradient(180deg, 40%, 100%)
 }
-.wrapper{
-    display: flex;
-    height: 100%;
-    width: 60%;
-    margin: 0 auto;
-    perspective: 450px;
-}
-.title{
-    color: #ffc909;
-    text-align: center;
-}
-
 .summary{
     color:#ffc909;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 3vw;
     line-height: 1.5em;
     font-weight: bold;
@@ -40,3 +33,4 @@
     from {top: 0; transform: translateZ(0) rotateX(20deg)}
     to { top: -7500px; transform: translateZ(-2500px) rotateX(21deg)}
 }
+

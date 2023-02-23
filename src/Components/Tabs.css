@@ -3,18 +3,18 @@
     flex-direction: row;
     justify-content: space-between;
     color:#ffc909;
-    cursor: pointer;
     font-family: 'Starjedi';
     src: url('./Starjedi.ttf');
     font-size: 1em;
 }
 .tab {
-    border: 1px solid black;
-    border-bottom: 2px solid black;
+    border: 1px solid #ffc909;
+    border-bottom: 2px solid #ffc909;
     height: 50px;
     width: 220px;
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    color:#ffc909
+    justify-content: center;
+    color:#ffc909;
+    cursor: pointer;
   }

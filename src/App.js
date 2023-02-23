@@ -18,7 +18,6 @@ class App extends Component {
         })
         .then((res) => {
             this.setState({films: res.results});
-            // console.log(this.state.films);
         });
     }
     showFilm = () => {
@@ -27,19 +26,18 @@ class App extends Component {
           return this.setState({film: foundFilm})
       };
     handleClick = (e) => {
-        // console.log(e.target.innerText);
         this.setState({ 
             idSelected: e.target.innerText }, () => {
           this.showFilm();
         });
       };
-
     render() {
         return (
             <div className="App">
                 <div className="container">
                     <Tabs clicker={this.handleClick} />
-                    {this.state.film ? <Info film={this.state.film}/> : ""}
+                    {this.state.film ? 
+                    <Info film={this.state.film}/> : ""}
                 </div>
             </div>
         );
