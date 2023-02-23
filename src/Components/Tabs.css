@@ -1,4 +1,14 @@
 .tabs {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
+.tab {
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    height: 50px;
+      width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

@@ -4,12 +4,10 @@ import Info from './Components/Info';
 import Tabs from './Components/Tabs';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            films: null,
-            idSelected: null,
-            film: null,
+            data: []
         };
     }
     componentDidMount() {
@@ -23,6 +21,23 @@ class App extends Component {
             console.log(this.state.films);
         });
     }
+    showFilm = () => {
+        console.log(this.state.idSelected);
+        return (this.state.idSelected
+          ? this.state.films.map(film => {
+              if (film.id === this.state.idSelected) {            
+                this.setState({film: film})
+              }
+          })
+          : "");
+      };
+    handleClick = (e) => {
+        console.log(e.target.id);
+        this.setState({ 
+            idSelected: e.target.id }, () => {
+          this.showFilm();
+        });
+      };
 
     render() {
         return (
