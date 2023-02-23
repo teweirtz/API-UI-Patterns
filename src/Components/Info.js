@@ -5,9 +5,10 @@ class Info extends Component{
     render() {
         const {film} = this.props;
         return (
-            <div>
-            <h1 className="title">{film.title}</h1>
-            <p className="summary">{film.opening_crawl}</p>
+            <div className="body">
+            <div className="wrapper">
+                <p className="summary">{film.opening_crawl}</p>
+            </div>
             </div>
         );
     }
